@@ -6,7 +6,7 @@ echo "=============================================="
 ID_USER=$(cat /etc/passwd |grep $1 |cut -d":" -f3)
 DESCRIPTION=$(cat /etc/passwd |grep $1 |cut -d":" -f5)
 USAGE_HOME=$(du -sh /home/$1 |cut -f1)
-LAST_LOGIN=$(lastlog -u $1)
+LAST_LOGIN=$(lastlog -u $USER)
 echo "=============================================="
 echo "Relatório do Usuário: $1"
 echo "UID: $ID_USER"

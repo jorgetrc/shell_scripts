@@ -3,8 +3,8 @@
 ls /home/$1 > /dev/null 2>&1 || { echo "Usuario Inexistente" ; exit 1; }
 
 echo "=============================================="
-ID_USER=$(cat /etc/passwd |grep $1 |cut -d":" -f3)
-DESCRIPTION=$(cat /etc/passwd |grep $1 |cut -d":" -f5)
+ID_USER=$(cat /etc/passwd |egrep $USER |cut -d":" -f3)
+DESCRIPTION=$(cat /etc/passwd |egrep $USER |cut -d":" -f5)
 USAGE_HOME=$(du -sh /home/$1 |cut -f1)
 LAST_LOGIN=$(lastlog -u $USER)
 echo "=============================================="
